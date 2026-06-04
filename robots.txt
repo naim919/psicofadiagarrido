@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://psifadiagarrido.com/sitemap.xml
+Sitemap: https://fadiagarrido.com/sitemap.xml
