@@ -850,6 +850,42 @@
       margin-top: -0.5rem;
       margin-bottom: 1.5rem;
     }
+    .hero-mobile-bar {
+      display: none;
+    }
+    @media (max-width: 860px) {
+      .hero-mobile-bar {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        order: -2;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .hero-mobile-bar .hm-eyebrow {
+        font-family: 'Arial', sans-serif;
+        font-size: clamp(0.6rem, 3vw, 0.72rem);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--sage);
+      }
+      .hero-mobile-bar .hm-sep {
+        font-family: 'Arial', sans-serif;
+        font-size: clamp(0.6rem, 3vw, 0.72rem);
+        color: var(--sage);
+        opacity: 0.6;
+      }
+      .hero-mobile-bar .hm-lang {
+        font-family: 'Arial', sans-serif;
+        font-size: clamp(0.6rem, 3vw, 0.72rem);
+        font-weight: 700;
+        color: var(--sage);
+        letter-spacing: 0.03em;
+      }
+      /* Ocultar versión desktop de eyebrow e idiomas en móvil */
+      .hero-eyebrow, .hero-idiomas { display: none; }
+    }
 
     /* ─── FAQ mobile button ─── */
     .faq-mobile-btn { display: none; margin-top: 1.5rem; }
@@ -925,6 +961,12 @@
             <span class="hero-trust-dot"></span>
             <span>Desde donde estés</span>
           </div>
+        </div>
+
+        <div class="hero-mobile-bar" aria-hidden="true">
+          <span class="hm-eyebrow">Terapeuta online</span>
+          <span class="hm-sep">·</span>
+          <span class="hm-lang">Sesiones en español e inglés</span>
         </div>
 
         <div class="hero-visual">
