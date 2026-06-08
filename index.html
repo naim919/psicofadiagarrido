@@ -13,7 +13,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Fadia Garrido | Psicóloga Online" />
-  <meta property="og:description" content="Terapia individual y de pareja online en español e inglés. Primera consulta gratuita, 30 minutos, sin compromiso." />
+  <meta property="og:description" content="Terapia individual y de pareja online en español e inglés. Primera consulta gratuita, 20 minutos, sin compromiso." />
   <meta property="og:url" content="https://fadiagarrido.com/" />
   <meta property="og:locale" content="es_ES" />
   <meta property="og:image" content="https://fadiagarrido.com/foto%20fadia.jpg" />
@@ -366,7 +366,6 @@
 
     @media (max-width: 860px) {
       .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-visual { order: -1; }
       .hero-photo-wrap { max-width: 100%; }
       .hero-photo-wrap img { min-height: 380px; }
     }
@@ -638,20 +637,19 @@
     /* ─── TESTIMONIOS CAROUSEL ─── */
     #testimonios { background: var(--cream); }
     .testimonios-intro { max-width: 560px; margin: 0 auto 3rem; text-align: center; }
-    .testimonios-carousel { position: relative; overflow: hidden; }
+    .testimonios-carousel { position: relative; overflow: hidden; cursor: grab; user-select: none; }
+    .testimonios-carousel:active { cursor: grabbing; }
     .testimonios-track {
       display: flex;
-      transition: transform 0.5s ease;
+      /* transition gestionado por JS */
     }
     .testimonio-card {
-      flex: 0 0 100%;
+      flex: none; /* ancho set por JS */
       background: var(--warm);
       border-radius: 6px;
-      padding: 2.5rem;
       border: 1px solid var(--stone);
-      max-width: 720px;
-      margin: 0 auto;
       box-sizing: border-box;
+      padding: 2.5rem max(2.5rem, calc(50% - 340px));
     }
     .testimonio-stars {
       color: var(--sage);
@@ -841,6 +839,24 @@
     .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
     .whatsapp-float svg { width: 28px; height: 28px; fill: #fff; }
 
+    /* ─── Hero idiomas ─── */
+    .hero-idiomas {
+      font-family: 'Arial', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── FAQ mobile button ─── */
+    .faq-mobile-btn { display: none; margin-top: 1.5rem; }
+    @media (max-width: 768px) {
+      .faq-sidebar-btn { display: none; }
+      .faq-mobile-btn { display: block; }
+    }
+
     /* ─── Scroll animations ─── */
     [data-fade] {
       opacity: 0;
@@ -867,11 +883,6 @@
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#como-funciona">Cómo funciona</a></li>
         <li><a href="#faq">Preguntas</a></li>
-        <li class="nav-mobile-cta">
-          <a href="https://calendly.com/psifadiagarrido" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-            Agenda una cita
-          </a>
-        </li>
       </ul>
 
       <div class="nav-cta">
@@ -891,7 +902,8 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="hero-eyebrow">Psicóloga online · Sesiones en español e inglés</p>
+          <p class="hero-eyebrow">Terapeuta online</p>
+          <p class="hero-idiomas">Sesiones en español e inglés</p>
           <h1 id="hero-heading" class="hero-title">
             Un espacio para<br><em>conocerte</em>,<br>no solo para<br>resolver problemas
           </h1>
@@ -906,7 +918,7 @@
           </div>
           <div class="hero-trust">
             <span class="hero-trust-dot"></span>
-            <span>30 min gratuitos</span>
+            <span>20 min gratuitos</span>
             <span class="hero-trust-dot"></span>
             <span>Sin compromiso</span>
             <span class="hero-trust-dot"></span>
@@ -1108,19 +1120,15 @@
           <div class="sobre-image-placeholder">
             <img src="foto%20fadia.jpg" alt="Fadia Garrido, terapeuta online" loading="lazy" width="575" height="1024" />
           </div>
-          <div class="sobre-image-badge" aria-hidden="true">
-            <strong>+7</strong>
-            años acompañando procesos terapéuticos
-          </div>
         </div>
 
         <div class="sobre-content" data-fade data-fade-delay="2">
           <span class="tag">Sobre mí</span>
-          <h2 id="sobre-heading">Terapeuta con mirada integrativa y sensibilidad clínica</h2>
-          <p>Soy Fadia, terapeuta. Me formé como psicóloga en Lima, en la Pontificia Universidad Católica del Perú, y seguí especializándome en Barcelona y Madrid, con másteres en Terapia Cognitivo-Conductual, Trauma y Neuropsicología.</p>
-          <p>Elegí esta carrera porque me fascina la capacidad del ser humano de transformarse y encontrar su propio camino. Acompañar ese proceso no es solo mi trabajo — es lo que genuinamente me mueve.</p>
+          <h2 id="sobre-heading">Soy terapeuta con mirada integrativa y sensibilidad clínica</h2>
+          <p><strong>soy Fadia</strong>, terapeuta. Me formé como psicóloga en Lima, en la Pontificia Universidad Católica del Perú, y seguí <u>especializándome en <strong>Barcelona</strong> y <strong>Madrid</strong> en terapia cognitivo-conductual, trauma y neuropsicología.</u></p>
+          <p>Elegí esta carrera porque me fascina la capacidad del ser humano de transformarse y encontrar su propio camino. Acompañar ese proceso no es solo mi trabajo — es <u>lo que genuinamente me mueve.</u></p>
           <p>Sé lo que es vivir lejos de casa. Migré desde Lima a Europa y entiendo de primera mano el peso de la distancia y el desafío de adaptarte a una cultura diferente. <strong>No tienes que explicarme el contexto — yo ya lo entiendo.</strong></p>
-          <p>Combino terapia cognitivo-conductual, regulación somática y neuropsicología. Porque cada persona es distinta, y el proceso debe serlo también.</p>
+          <p>Combino terapia cognitivo-conductual, regulación somática y neuropsicología. Porque <u>cada persona es distinta y el proceso debe serlo también.</u></p>
 
           <div class="sobre-quote">
             "Ofrezco terapia online en español para hispanohablantes que viven en Europa — desde donde estés, en el idioma en que te sientes tú misma."
@@ -1145,12 +1153,6 @@
             </div>
           </div>
 
-          <ul class="formacion-list" aria-label="Formación">
-            <li>Licenciatura en Psicología — Pontificia Universidad Católica del Perú, Lima</li>
-            <li>Máster en Terapia Cognitivo-Conductual</li>
-            <li>Máster en Trauma</li>
-            <li>Máster en Neuropsicología</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -1170,7 +1172,7 @@
           <div class="paso-num" aria-hidden="true">1</div>
           <div class="paso-badge">Gratuita</div>
           <h3>Primera consulta</h3>
-          <p>30 minutos sin coste. Hablamos de lo que te trae, sin compromisos. Es un espacio para conocernos.</p>
+          <p>20 minutos sin coste. Hablamos de lo que te trae, sin compromisos. Es un espacio para conocernos.</p>
         </div>
         <div class="paso" data-fade data-fade-delay="2">
           <div class="paso-num" aria-hidden="true">2</div>
@@ -1282,7 +1284,7 @@
           <span class="tag">Preguntas frecuentes</span>
           <h2 id="faq-heading">Todo lo que suelen preguntar antes de empezar</h2>
           <p class="text-muted" style="margin-top:1rem; margin-bottom:2rem;">Si tienes alguna duda que no aparezca aquí, escríbeme directamente.</p>
-          <a href="https://wa.me/34617006053" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/34617006053" class="btn btn-outline faq-sidebar-btn" target="_blank" rel="noopener noreferrer">
             Enviar una pregunta
           </a>
         </div>
@@ -1367,6 +1369,11 @@
               Si sientes que algo no encaja, que hay un malestar que no desaparece o que quieres conocerte mejor, la terapia puede ayudarte. La primera consulta es gratuita y sin compromiso — simplemente hablamos.
             </div>
           </div>
+          <div class="faq-mobile-btn">
+            <a href="https://wa.me/34617006053" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              Enviar una pregunta
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -1388,7 +1395,7 @@
       </div>
       <p class="cta-guarantee">
         <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        30 minutos gratuitos · Sin compromiso · Desde donde estés
+        20 minutos gratuitos · Sin compromiso · Desde donde estés
       </p>
     </div>
   </section>
@@ -1486,44 +1493,112 @@
 
     // ─── Testimonios carousel ───
     (function () {
+      const carousel = document.querySelector('.testimonios-carousel');
       const track = document.getElementById('testimoniosTrack');
-      const cards = track.querySelectorAll('.testimonio-card');
+      const origCards = Array.from(track.querySelectorAll('.testimonio-card'));
       const dotsContainer = document.getElementById('testimoniosDots');
-      const total = cards.length;
-      let current = 0;
-      let timer;
+      const total = origCards.length;
+      let timer, pos, current;
 
-      // Build dots
-      cards.forEach((_, i) => {
+      // Clonar primera y última tarjeta para bucle infinito
+      const firstClone = origCards[0].cloneNode(true);
+      const lastClone  = origCards[total - 1].cloneNode(true);
+      firstClone.setAttribute('aria-hidden', 'true');
+      lastClone.setAttribute('aria-hidden', 'true');
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, origCards[0]);
+      // Orden: [lastClone, card0..cardN-1, firstClone]
+
+      const allSlides = Array.from(track.querySelectorAll('.testimonio-card'));
+
+      function sw() { return carousel.clientWidth; }
+
+      function resize() {
+        const w = sw();
+        allSlides.forEach(s => { s.style.width = w + 'px'; s.style.minWidth = w + 'px'; });
+        setPos(pos, false);
+      }
+
+      function setPos(index, animate) {
+        track.style.transition = animate ? 'transform 0.5s ease' : 'none';
+        track.style.transform = 'translateX(' + (-index * sw()) + 'px)';
+      }
+
+      function updateDots() {
+        dotsContainer.querySelectorAll('.testimonio-dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function next() {
+        pos++;
+        current = (current + 1) % total;
+        setPos(pos, true);
+        updateDots();
+      }
+
+      function prev() {
+        pos--;
+        current = ((current - 1) + total) % total;
+        setPos(pos, true);
+        updateDots();
+      }
+
+      function goTo(index) {
+        current = ((index % total) + total) % total;
+        pos = current + 1;
+        setPos(pos, true);
+        updateDots();
+      }
+
+      // Bucle infinito: al llegar a clon, saltar a la real sin animación
+      track.addEventListener('transitionend', () => {
+        if (pos === 0) { pos = total; setPos(pos, false); }
+        else if (pos === total + 1) { pos = 1; setPos(pos, false); }
+      });
+
+      // Construir dots
+      origCards.forEach((_, i) => {
         const dot = document.createElement('button');
         dot.className = 'testimonio-dot' + (i === 0 ? ' active' : '');
         dot.setAttribute('role', 'tab');
         dot.setAttribute('aria-label', 'Testimonio ' + (i + 1));
-        dot.addEventListener('click', () => goTo(i));
+        dot.addEventListener('click', () => { goTo(i); resetTimer(); });
         dotsContainer.appendChild(dot);
       });
 
-      function goTo(index) {
-        current = (index + total) % total;
-        track.style.transform = 'translateX(-' + (current * 100) + '%)';
-        dotsContainer.querySelectorAll('.testimonio-dot').forEach((d, i) => {
-          d.classList.toggle('active', i === current);
-        });
-        resetTimer();
-      }
+      document.getElementById('prevTestimonio').addEventListener('click', () => { prev(); resetTimer(); });
+      document.getElementById('nextTestimonio').addEventListener('click', () => { next(); resetTimer(); });
+
+      // Swipe táctil
+      let touchX = 0, touchY = 0;
+      carousel.addEventListener('touchstart', e => {
+        touchX = e.touches[0].clientX;
+        touchY = e.touches[0].clientY;
+      }, { passive: true });
+      carousel.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - touchX;
+        const dy = e.changedTouches[0].clientY - touchY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+          dx < 0 ? next() : prev();
+          resetTimer();
+        }
+      }, { passive: true });
+
+      // Pausa en hover
+      carousel.addEventListener('mouseenter', () => clearInterval(timer));
+      carousel.addEventListener('mouseleave', resetTimer);
 
       function resetTimer() {
         clearInterval(timer);
-        timer = setInterval(() => goTo(current + 1), 5000);
+        timer = setInterval(next, 5000);
       }
 
-      document.getElementById('prevTestimonio').addEventListener('click', () => goTo(current - 1));
-      document.getElementById('nextTestimonio').addEventListener('click', () => goTo(current + 1));
-
-      // Pause on hover
-      track.addEventListener('mouseenter', () => clearInterval(timer));
-      track.addEventListener('mouseleave', resetTimer);
-
+      // Inicializar
+      pos = 1;
+      current = 0;
+      resize();
+      window.addEventListener('resize', resize);
       resetTimer();
     })();
 
