@@ -780,6 +780,20 @@
     /* ─── Palabra clave (negrita) ─── */
     .kw { font-weight: 700; color: var(--ink); }
 
+    /* ─── Enlace "Saber más" en tarjetas de servicio ─── */
+    .servicio-link {
+      margin-top: auto;
+      padding-top: 1.25rem;
+      align-self: flex-start;
+      font-family: 'Arial', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--sage);
+      text-decoration: none;
+    }
+    .servicio-link:hover { text-decoration: underline; }
+
     /* ─── Menú desplegable de Servicios ─── */
     .nav-dropdown { position: relative; }
     .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; }
