@@ -746,6 +746,7 @@
         font-weight: 700;
         color: var(--sage);
         letter-spacing: 0.03em;
+        text-transform: uppercase;
       }
       /* Ocultar versión desktop de eyebrow e idiomas en móvil */
       .hero-eyebrow, .hero-idiomas { display: none; }
