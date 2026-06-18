@@ -770,6 +770,16 @@
     [data-fade-delay="3"] { transition-delay: 0.3s; }
     [data-fade-delay="4"] { transition-delay: 0.4s; }
 
+    /* ─── Pasos en 3 columnas (páginas de servicio) ─── */
+    .pasos-grid.pasos-3 { grid-template-columns: repeat(3, 1fr); }
+    .pasos-grid.pasos-3::before { display: none; }
+    .paso-num svg { width: 30px; height: 30px; }
+    @media (max-width: 768px) {
+      .pasos-grid.pasos-3 { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    /* ─── Palabra clave (negrita) ─── */
+    .kw { font-weight: 700; color: var(--ink); }
+
     /* ─── Menú desplegable de Servicios ─── */
     .nav-dropdown { position: relative; }
     .nav-dropdown-toggle { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; }
