@@ -485,12 +485,19 @@
       const open = navLinks.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
     });
-    navLinks.querySelectorAll('a').forEach(a => {
+    navLinks.querySelectorAll('a:not(.nav-dropdown-toggle)').forEach(a => {
       a.addEventListener('click', () => {
         navLinks.classList.remove('open');
         toggle.setAttribute('aria-expanded', false);
       });
     });
+    const dropToggle = document.querySelector('.nav-dropdown-toggle');
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropToggle && dropdown) {
+      dropToggle.addEventListener('click', (e) => {
+        if (window.matchMedia('(max-width: 768px)').matches) { e.preventDefault(); dropdown.classList.toggle('open'); }
+      });
+    }
 
     // ─── FAQ accordion ───
     document.querySelectorAll('.faq-question').forEach(btn => {

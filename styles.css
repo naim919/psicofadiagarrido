@@ -812,8 +812,10 @@
     .nav-submenu a:hover { background: var(--stone); color: var(--ink); }
 
     @media (max-width: 768px) {
-      .nav-caret { display: none; }
       .nav-dropdown::after { display: none; }
+      .nav-caret { display: inline-block; transition: transform 0.25s ease; }
+      .nav-dropdown.open .nav-caret { transform: rotate(180deg); }
+      /* En móvil el submenú está colapsado por defecto y se despliega al tocar */
       .nav-links.open .nav-submenu {
         position: static;
         transform: none;
@@ -824,6 +826,13 @@
         border: none;
         border-radius: 0;
         box-shadow: none;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .nav-links.open .nav-dropdown.open .nav-submenu {
+        max-height: 600px;
         padding: 0 0 0 1rem;
       }
       .nav-links.open .nav-submenu a {

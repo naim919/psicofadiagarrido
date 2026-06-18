@@ -259,7 +259,10 @@
     const toggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     toggle.addEventListener('click', () => { const open = navLinks.classList.toggle('open'); toggle.setAttribute('aria-expanded', open); });
-    navLinks.querySelectorAll('a').forEach(a => { a.addEventListener('click', () => { navLinks.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }); });
+    navLinks.querySelectorAll('a:not(.nav-dropdown-toggle)').forEach(a => { a.addEventListener('click', () => { navLinks.classList.remove('open'); toggle.setAttribute('aria-expanded', false); }); });
+    const dropToggle = document.querySelector('.nav-dropdown-toggle');
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropToggle && dropdown) { dropToggle.addEventListener('click', (e) => { if (window.matchMedia('(max-width: 768px)').matches) { e.preventDefault(); dropdown.classList.toggle('open'); } }); }
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
