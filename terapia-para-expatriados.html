@@ -497,7 +497,7 @@
     const dropdown = document.querySelector('.nav-dropdown');
     if (dropToggle && dropdown) {
       dropToggle.addEventListener('click', (e) => {
-        if (window.matchMedia('(max-width: 768px)').matches) { e.preventDefault(); dropdown.classList.toggle('open'); }
+        e.preventDefault(); if (window.matchMedia('(max-width: 768px)').matches) { dropdown.classList.toggle('open'); }
       });
     }
 
