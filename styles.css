@@ -853,11 +853,9 @@
         justify-content: center;
         gap: 0.5rem;
       }
-      /* Indicador "+" que pasa a "−" al abrir (como en Preguntas frecuentes) */
-      .nav-caret { font-size: 0; line-height: 1; transition: none; }
-      .nav-caret::after { content: '+'; font-size: 1.5rem; font-weight: 300; line-height: 1; }
-      .nav-dropdown.open .nav-caret { transform: none; }
-      .nav-dropdown.open .nav-caret::after { content: '−'; }
+      /* Flechita hacia abajo que gira al abrir */
+      .nav-caret { font-size: 0.85rem; line-height: 1; transition: transform 0.25s ease; }
+      .nav-dropdown.open .nav-caret { transform: rotate(180deg); }
       /* En móvil el submenú está colapsado por defecto y se despliega al tocar */
       .nav-links.open .nav-submenu {
         position: static;
