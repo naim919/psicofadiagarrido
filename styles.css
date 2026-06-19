@@ -839,6 +839,14 @@
       .nav-dropdown::after { display: none; }
       /* "Servicios" centrado como el resto de enlaces */
       .nav-links.open .nav-dropdown { text-align: center; }
+      /* Nivel principal: enlaces fijos más grandes y con presencia */
+      .nav-links.open > li:not(.nav-mobile-cta) > a,
+      .nav-links.open .nav-dropdown .nav-dropdown-toggle {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--ink);
+        padding: 1.05rem 0;
+      }
       .nav-links.open .nav-dropdown .nav-dropdown-toggle {
         display: inline-flex;
         align-items: center;
@@ -868,12 +876,15 @@
       }
       .nav-links.open .nav-dropdown.open .nav-submenu {
         max-height: 600px;
-        padding: 0;
+        padding: 0.4rem 0 0.7rem;
       }
-      .nav-links.open .nav-submenu a {
-        padding: 0.85rem 0;
-        font-size: 0.92rem;
+      /* Submenú: secundario, más pequeño, suave y sin líneas divisorias */
+      .nav-links.open .nav-dropdown .nav-submenu a {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+        font-weight: 400;
         color: var(--muted);
         text-align: center;
+        border-bottom: none;
       }
     }
