@@ -817,13 +817,15 @@
       transition: opacity 0.2s ease, transform 0.2s ease;
       z-index: 101;
     }
-    .nav-dropdown:hover .nav-submenu,
-    .nav-dropdown:focus-within .nav-submenu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
+    @media (hover: hover) {
+      .nav-dropdown:hover .nav-submenu,
+      .nav-dropdown:focus-within .nav-submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+      .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
     }
-    .nav-dropdown:hover .nav-caret { transform: rotate(180deg); }
     .nav-submenu li { list-style: none; }
     .nav-submenu a {
       display: block;
