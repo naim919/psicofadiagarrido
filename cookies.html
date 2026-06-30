@@ -48,13 +48,16 @@
       <p>Las cookies son pequeños archivos que un sitio web guarda en tu dispositivo al visitarlo, y que sirven, por ejemplo, para recordar tus preferencias o para medir el uso de la web.</p>
 
       <h2 style="margin-top:2rem;">¿Usa cookies este sitio web?</h2>
-      <p>Este sitio es una web estática e informativa y, en su configuración actual, <strong>no instala cookies propias de seguimiento ni de publicidad</strong>, ni utiliza herramientas de analítica que identifiquen a los visitantes.</p>
+      <p>Este sitio utiliza <strong>cookies de analítica</strong> a través de <strong>Google Analytics</strong>, con la única finalidad de entender de forma estadística cómo se usa la web (páginas visitadas, país aproximado, dispositivo) y poder mejorarla. <strong>No se usan cookies con fines publicitarios.</strong></p>
+      <p><strong>Estas cookies solo se activan si tú las aceptas</strong> en el aviso que aparece al entrar. Si pulsas "Rechazar", no se carga ninguna cookie de analítica. Puedes cambiar de opinión cuando quieras borrando los datos del navegador.</p>
+      <table style="width:100%; border-collapse:collapse; margin-top:1rem; font-size:0.9rem;">
+        <tr style="border-bottom:1px solid var(--stone);"><th style="text-align:left; padding:0.5rem 0;">Cookie</th><th style="text-align:left; padding:0.5rem 0;">Finalidad</th><th style="text-align:left; padding:0.5rem 0;">Duración</th></tr>
+        <tr style="border-bottom:1px solid var(--stone);"><td style="padding:0.5rem 0;">_ga</td><td style="padding:0.5rem 0;">Analítica (Google) — distingue visitantes</td><td style="padding:0.5rem 0;">Hasta 2 años</td></tr>
+        <tr><td style="padding:0.5rem 0;">_ga_*</td><td style="padding:0.5rem 0;">Analítica (Google) — estado de la sesión</td><td style="padding:0.5rem 0;">Hasta 2 años</td></tr>
+      </table>
 
       <h2 style="margin-top:2rem;">Cookies de terceros</h2>
       <p>La web incluye botones y enlaces a servicios externos (como <strong>Calendly</strong> para reservar cita o <strong>WhatsApp</strong> para contactar). Cuando pulsas en ellos y accedes a esos servicios, son esas plataformas las que pueden instalar sus propias cookies, sujetas a sus respectivas políticas. Te recomendamos consultarlas si vas a usarlas.</p>
-
-      <h2 style="margin-top:2rem;">Cambios futuros</h2>
-      <p>Si en el futuro se incorporan herramientas de medición o publicidad (por ejemplo, estadísticas de visitas o campañas en buscadores), esta política se actualizará y se mostrará un <strong>aviso de cookies</strong> para que puedas <strong>aceptar o rechazar</strong> su uso antes de activarse.</p>
 
       <h2 style="margin-top:2rem;">¿Cómo gestionar o desactivar las cookies?</h2>
       <p>Puedes configurar o eliminar las cookies en cualquier momento desde los ajustes de tu navegador:</p>
@@ -124,5 +127,6 @@
     const dropdown = document.querySelector('.nav-dropdown');
     if (dropToggle && dropdown) { dropToggle.addEventListener('click', (e) => { e.preventDefault(); if (window.matchMedia('(max-width: 768px)').matches) { dropdown.classList.toggle('open'); } }); }
   </script>
+  <script src="/analytics.js" defer></script>
 </body>
 </html>
