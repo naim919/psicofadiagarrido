@@ -730,7 +730,7 @@
       }
       .hero-mobile-bar .hm-eyebrow {
         font-family: 'Arial', sans-serif;
-        font-size: clamp(0.56rem, 2.5vw, 0.8rem);
+        font-size: clamp(0.68rem, 3.1vw, 0.95rem);
         font-weight: 600;
         letter-spacing: 0.02em;
         text-transform: none;
@@ -738,13 +738,13 @@
       }
       .hero-mobile-bar .hm-sep {
         font-family: 'Arial', sans-serif;
-        font-size: clamp(0.56rem, 2.5vw, 0.8rem);
+        font-size: clamp(0.68rem, 3.1vw, 0.95rem);
         color: var(--sage);
         opacity: 0.6;
       }
       .hero-mobile-bar .hm-lang {
         font-family: 'Arial', sans-serif;
-        font-size: clamp(0.56rem, 2.5vw, 0.8rem);
+        font-size: clamp(0.68rem, 3.1vw, 0.95rem);
         font-weight: 700;
         color: var(--sage);
         letter-spacing: 0.01em;
