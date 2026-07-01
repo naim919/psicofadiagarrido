@@ -3,6 +3,17 @@
 (function () {
   var GA_ID = 'G-Z6VQDKP7F1';
   var KEY = 'fg-cookie-consent';
+  var NOTRACK = 'fg-no-track';
+
+  /* Exclusión de dispositivos propios: entrar UNA vez con fadiagarrido.com/#nocontar
+     deja este navegador marcado para siempre como "no contar" (ni GA ni banner). */
+  try {
+    if (location.hash === '#nocontar') {
+      localStorage.setItem(NOTRACK, '1');
+      alert('Hecho ✓ Este dispositivo ya NO se contará en las estadísticas de la web.');
+    }
+    if (localStorage.getItem(NOTRACK) === '1') return;
+  } catch (e) {}
 
   function loadGA() {
     if (window.__fgGaLoaded) return;
