@@ -16,6 +16,24 @@
     window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', GA_ID, { anonymize_ip: true });
+    trackWhatsAppClicks();
+  }
+
+  /* Contar los clics en cualquier enlace de WhatsApp (evento "clic_whatsapp" en GA4) */
+  function trackWhatsAppClicks() {
+    if (window.__fgWaTracked) return;
+    window.__fgWaTracked = true;
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+      if (!a || !window.gtag) return;
+      var boton = a.classList.contains('whatsapp-float')
+        ? 'Icono flotante'
+        : ((a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60) || 'Enlace WhatsApp');
+      window.gtag('event', 'clic_whatsapp', {
+        boton: boton,
+        pagina: location.pathname
+      });
+    }, true);
   }
 
   function setConsent(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
